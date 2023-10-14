@@ -7,7 +7,8 @@ export const useLetters = (
   handleErrores,
   setValue,
   handlePuntos,
-  puntos
+  puntos,
+  inputRef
 ) => {
   const [letrasIngresadas, setLetrasIngresadas] = useState("");
   useEffect(() => {
@@ -24,7 +25,11 @@ export const useLetters = (
     if (puntos === 0) return;
     setValue("");
   }, [puntos]);
-
+  useEffect(() => {
+    if (inputRef && inputRef.current && letrasIngresadas === word[index]) {
+      inputRef.current.focus();
+    }
+  }, [letrasIngresadas, word, index, inputRef]);
   return {
     letrasIngresadas,
   };
