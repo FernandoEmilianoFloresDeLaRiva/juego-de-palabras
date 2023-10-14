@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "./Letra.module.css";
 import { useLetters } from "../../hooks/useLetters";
 
-function InputLetra({ index, word, handleErrores, handlePuntos, puntos }) {
+function InputLetra({ index, word, handleErrores, handlePuntos, puntos, inputRef }) {
   const [value, setValue] = useState("");
   const { letrasIngresadas } = useLetters(
     word,
@@ -18,7 +18,7 @@ function InputLetra({ index, word, handleErrores, handlePuntos, puntos }) {
   };
 
   return (
-    <input className={style.input} onChange={handleChange} value={value} />
+    <input className={style.input} onChange={handleChange} value={value} ref={inputRef}/>
   );
 }
 

@@ -22,5 +22,5 @@ export const useWord = () => {
     };
     handlePuntos();
   }, [puntosLetra]);
-  return { word, puntosLetra, puntos, setPuntosLetra};
+  return { word, puntosLetra, puntos, setPuntosLetra, setPuntos};
 };
