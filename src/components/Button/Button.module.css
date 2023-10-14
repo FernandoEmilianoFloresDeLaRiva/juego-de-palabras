@@ -1,0 +1,18 @@
+.button {
+  background-color: #F7D5B1;
+  color: #2c3950;
+  opacity: 0.9;
+  border: 2px solid transparent;
+  border-radius: 3em;
+  min-width: 10%;
+  height: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 1.3s;
+}
+
+.button:hover {
+  cursor: pointer;
+  scale: 1.2;
+}

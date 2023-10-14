@@ -1,0 +1,12 @@
+.palabra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    font-size: 1rem;
+}
+
+.palabra p{
+    text-transform: capitalize;
+}

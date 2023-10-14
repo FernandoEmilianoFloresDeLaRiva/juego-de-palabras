@@ -1,0 +1,21 @@
+.puntuacionSeccion{
+    border-top: 2px dashed #F7D5B1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.contenidoPuntos{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    font-size: 1em;
+}
+
+.contenidoPuntos p{
+    font-size: 1.3em;
+    font-weight: 500;
+}
