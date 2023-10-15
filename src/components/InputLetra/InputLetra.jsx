@@ -25,7 +25,6 @@ function InputLetra({
     refInput,
     indexInput
   );
-  console.log();
   const handleChange = ({ target }) => {
     setValue(target.value);
   };

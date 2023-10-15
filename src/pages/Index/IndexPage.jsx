@@ -18,11 +18,8 @@ function IndexPage() {
       setGameOver(true);
     }
   };
-  const handleReset = (e) => {
-    e.preventDefault();
-    setErrores(0);
-    setPuntosLetra(0);
-    setPuntos(0);
+  const handleReset = () => {
+    window.location.reload()
   };
   const cerrarModal = (e) => {
     e.preventDefault();
