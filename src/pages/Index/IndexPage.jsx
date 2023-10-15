@@ -10,7 +10,8 @@ import Contenedor from "../../components/PuntuacionContenedor/Contenedor";
 function IndexPage() {
   const [gameOver, setGameOver] = useState(false);
   const [errores, setErrores] = useState(0);
-  const { word, puntos, setPuntosLetra, setPuntos, record } = useWord(gameOver);
+  const [indexInput, setIndexInput] = useState(0)
+  const { word, puntos, setPuntosLetra, setPuntos, record } = useWord(gameOver, setIndexInput);
   const handleErrores = () => {
     setErrores(errores + 1);
     if (errores === 3) {
@@ -39,7 +40,7 @@ function IndexPage() {
       <section className={styles.segundaSeccion}>
         <Contenedor errores={errores} puntos={puntos} record={record} />
         <div className={styles.contenedorInputs}>
-          {word.reverseWord.map((letra, index) => {
+          {word.reverseWord.map((_, index) => {
             return (
               <InputLetra
                 key={index}
@@ -48,6 +49,8 @@ function IndexPage() {
                 handleErrores={handleErrores}
                 handlePuntos={setPuntosLetra}
                 puntos={puntos}
+                setIndexInput={setIndexInput}
+                indexInput = {indexInput}
               />
             );
           })}

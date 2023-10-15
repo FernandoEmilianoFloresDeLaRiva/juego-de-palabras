@@ -7,14 +7,21 @@ export const useLetters = (
   handleErrores,
   setValue,
   handlePuntos,
-  puntos
+  puntos,
+  setIndexInput,
+  refInput,
+  indexInput
 ) => {
   const [letrasIngresadas, setLetrasIngresadas] = useState("");
+  useEffect(() => {
+    if(refInput.current !== null) refInput.current.focus();
+  }, [indexInput]);
   useEffect(() => {
     if (value === "") return;
     if (value === word[index]) {
       setLetrasIngresadas((prev) => prev + value);
       handlePuntos((prev) => prev + 1);
+      setIndexInput((prev) => prev + 1);
     } else {
       handleErrores();
       setValue("");

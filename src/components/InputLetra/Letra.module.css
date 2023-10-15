@@ -19,7 +19,12 @@
   background-color: #f7d5b1;
 }
 
-.input:hover {
-  cursor: pointer;
+.input:not(:focus){
+  cursor: not-allowed;
+}
+
+.input:focus {
+  cursor:text;
+  border: none;
   box-shadow: 0px 0px 5px 2px #f7d5b1;
 }

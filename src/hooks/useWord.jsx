@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { getWords } from "../utils/getWords";
 
-export const useWord = (gameOver) => {
-  const [record, setRecord] = useState(localStorage.getItem("record") || 0);
+export const useWord = (gameOver, setIndexInput) => {
+  const recordInital = localStorage.getItem("record") !== null ? localStorage.getItem("record") : 0
+  const [record, setRecord] = useState(recordInital);
   const [puntos, setPuntos] = useState(0);
   const [puntosLetra, setPuntosLetra] = useState(0);
   const [word, setWord] = useState({ orderWord: [], reverseWord: [] });
@@ -27,9 +28,10 @@ export const useWord = (gameOver) => {
       if (puntosLetra === word.orderWord.length) {
         setPuntos((prev) => prev + 10);
         setPuntosLetra(0);
+        setIndexInput(0)
       }
     };
     handlePuntos();
   }, [puntosLetra]);
-  return { word, puntosLetra, puntos, setPuntosLetra, setPuntos, record };
+  return { word, puntos, setPuntosLetra, setPuntos, record };
 };
