@@ -26,6 +26,7 @@ function IndexPage() {
     setGameOver(false);
     setErrores(0);
     setPuntos(0);
+    setIndexInput(0)
   };
   return (
     <div className={styles.body}>
