@@ -10,8 +10,11 @@ import Contenedor from "../../components/PuntuacionContenedor/Contenedor";
 function IndexPage() {
   const [gameOver, setGameOver] = useState(false);
   const [errores, setErrores] = useState(0);
-  const [indexInput, setIndexInput] = useState(0)
-  const { word, puntos, setPuntosLetra, setPuntos, record } = useWord(gameOver, setIndexInput);
+  const [indexInput, setIndexInput] = useState(0);
+  const { word, puntos, setPuntosLetra, setPuntos, record } = useWord(
+    gameOver,
+    setIndexInput
+  );
   const handleErrores = () => {
     setErrores(errores + 1);
     if (errores === 3) {
@@ -19,14 +22,14 @@ function IndexPage() {
     }
   };
   const handleReset = () => {
-    window.location.reload()
+    window.location.reload();
   };
   const cerrarModal = (e) => {
     e.preventDefault();
     setGameOver(false);
     setErrores(0);
     setPuntos(0);
-    setIndexInput(0)
+    setIndexInput(0);
   };
   return (
     <div className={styles.body}>
@@ -48,7 +51,7 @@ function IndexPage() {
                 handlePuntos={setPuntosLetra}
                 puntos={puntos}
                 setIndexInput={setIndexInput}
-                indexInput = {indexInput}
+                indexInput={indexInput}
               />
             );
           })}

@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { getWords } from "../utils/getWords";
 
 export const useWord = (gameOver, setIndexInput) => {
-  const recordInital = localStorage.getItem("record") !== null ? localStorage.getItem("record") : 0
+  const recordInital =
+    localStorage.getItem("record") !== null
+      ? localStorage.getItem("record")
+      : 0;
   const [record, setRecord] = useState(recordInital);
   const [puntos, setPuntos] = useState(0);
   const [puntosLetra, setPuntosLetra] = useState(0);
@@ -28,7 +31,7 @@ export const useWord = (gameOver, setIndexInput) => {
       if (puntosLetra === word.orderWord.length) {
         setPuntos((prev) => prev + 10);
         setPuntosLetra(0);
-        setIndexInput(0)
+        setIndexInput(0);
       }
     };
     handlePuntos();

@@ -26,7 +26,8 @@ function InputLetra({
     indexInput
   );
   const handleChange = ({ target }) => {
-    setValue(target.value);
+    const valueLowerCase = target.value.toLowerCase();
+    setValue(valueLowerCase);
   };
 
   return (
